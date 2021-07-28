@@ -7,7 +7,7 @@ class Scores
 public:
 	Scores(size_t size = 10);
 	void add(const GameEntry& entry);
-	//GameEntry remove(index_t index);
+	GameEntry remove(index_t index) {}
 	void printEntries();
 
 private:
