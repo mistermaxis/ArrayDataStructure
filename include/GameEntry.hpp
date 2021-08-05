@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "Typedefs.hpp"
+#include "../include/Typedefs.hpp"
 
 class GameEntry {
 public:
@@ -12,15 +12,3 @@ private:
 	std::string name;
 	score_t score;
 };
-
-GameEntry::GameEntry(const std::string& n, score_t score) : name(n), score(score) { }
-
-std::string GameEntry::getName() const
-{
-	return name;
-}
-
-score_t GameEntry::getScore() const
-{
-	return score;
-}

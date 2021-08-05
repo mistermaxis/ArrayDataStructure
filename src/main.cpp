@@ -1,4 +1,4 @@
-#include "Scores.hpp"
+#include "../include/Scores.hpp"
 
 int main()
 {
@@ -17,8 +17,8 @@ int main()
 	scores.add(GameEntry("Michael", 852U));
 	scores.add(GameEntry("Jane", 349U));
 	scores.add(GameEntry("Lisa", 673U));
-	scores.add(GameEntry("Justin", 829U));
-	scores.add(GameEntry("Charles", 381Ugi));
+	scores.add(GameEntry("Justin", 839U));
+	scores.add(GameEntry("Charles", 381U));
 
 	scores.printEntries();
 

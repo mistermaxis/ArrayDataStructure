@@ -1,20 +1,5 @@
-#pragma once
 #include <memory>
-#include "GameEntry.hpp"
-
-class Scores
-{
-public:
-	Scores(size_t size = 10);
-	void add(const GameEntry &entry);
-	GameEntry remove(index_t index) {}
-	void printEntries();
-
-private:
-	size_t maxEntries;
-	index_t entries;
-	std::unique_ptr<GameEntry[]> entriesList;
-};
+#include "../include/Scores.hpp"
 
 Scores::Scores(size_t size)
 {
