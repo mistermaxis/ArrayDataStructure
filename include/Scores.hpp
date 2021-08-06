@@ -5,13 +5,13 @@
 class Scores
 {
 public:
-	Scores(size_t size = 10);
+	Scores(int size = 4);
 	void add(const GameEntry &entry);
-	GameEntry remove(index_t index) { return GameEntry("John", 0); }
+	GameEntry remove(index_t index);
 	void printEntries();
 
 private:
-	size_t maxEntries;
+	int maxEntries;
 	index_t entries;
 	std::unique_ptr<GameEntry[]> entriesList;
 };

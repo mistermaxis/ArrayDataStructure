@@ -1,7 +1,7 @@
 #include <memory>
 #include "../include/Scores.hpp"
 
-Scores::Scores(size_t size)
+Scores::Scores(int size)
 {
 	maxEntries = size;
 	entriesList = std::make_unique<GameEntry[]>(maxEntries);
@@ -10,35 +10,26 @@ Scores::Scores(size_t size)
 
 void Scores::add(const GameEntry &entry)
 {
-	if (entries == 0)
+	int index, previous;
+	for (index = entries, previous = index - 1; entry.getScore() > entriesList[previous].getScore() && index > 0; index--, previous--)
 	{
-
-		entriesList[entries] = entry;
-		entries++;
-	}
-	else
-	{
-		if (entries <= maxEntries)
-		{
-
-			if (entry.getScore() > entriesList[entries - 1].getScore())
-			{
-				int i;
-				for (i = entries - 1; entry.getScore() > entriesList[i].getScore() && i >= 0; i--)
-				{
-					if ((i + 1) != maxEntries)
-					{
-						entriesList[i + 1] = entriesList[i];
-					}
-				}
-				entriesList[i + 1] = entry;
-				if (entries < maxEntries)
-				{
-					entries++;
-				}
-			}
+		if (index != maxEntries) {
+			entriesList[index] = entriesList[previous];
 		}
 	}
+
+	if (index < maxEntries) {
+		entriesList[index] = entry;
+	}
+
+	if (entries < maxEntries) {
+		entries++;
+	}
+}
+
+GameEntry Scores::remove(index_t index)
+{
+	return GameEntry("John", 0);
 }
 
 void Scores::printEntries()

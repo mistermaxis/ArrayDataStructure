@@ -6,7 +6,7 @@ int main()
 
 	scores.add(GameEntry("John", 339U));
 	scores.add(GameEntry("Sam", 150U));
-	scores.add(GameEntry("Ian", 179U));
+	scores.add(GameEntry("Ian", 279U));
 	scores.add(GameEntry("Sandra", 255U));
 	scores.add(GameEntry("Max", 472U));
 	scores.add(GameEntry("Susan", 420U));
